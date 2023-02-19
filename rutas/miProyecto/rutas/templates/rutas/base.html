@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %} | Mi Web Rutas</title>
+
+    {% load static %}
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" href="{% static 'rutas/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'rutas/css/estilos.css' %}">
+	
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<aside class="barra-lateral col-12 col-sm-auto p-0">
+				<div class="logo">
+					<h2 class="py-4 m-0">Rutas</h2>
+				</div>
+				<nav class="menu d-flex d-sm-block justify-content-center flex-wrap">
+					<a href="{% url 'home' %}">
+						<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+							<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+							<path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+						  </svg>
+						Inicio Presentación
+					</a>
+					<a href="{% url 'primos' %}">
+						<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-p-circle" viewBox="0 0 16 16">
+							<path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8Zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM5.5 4.002h2.962C10.045 4.002 11 5.104 11 6.586c0 1.494-.967 2.578-2.55 2.578H6.784V12H5.5V4.002Zm2.77 4.072c.893 0 1.419-.545 1.419-1.488s-.526-1.482-1.42-1.482H6.778v2.97H8.27Z"/>
+						  </svg>
+						Números Primos
+					</a>
+					<a href="{% url 'factorial' %}">
+						<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-graph-up-arrow" viewBox="0 0 16 16">
+							<path fill-rule="evenodd" d="M0 0h1v15h15v1H0V0Zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5Z"/>
+						  </svg>
+						Número Factorial
+					</a>
+					<a href="{% url 'saludo' %}">
+						<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+							<path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+						  </svg>
+						Saludo
+					</a>
+				</nav>
+			</aside>
+			<main class="main col">
+				<div class="row">
+					<div class="columna col-12 col-lg-7">
+						<div class="widget nueva_entrada">
+                            {% block content %}{% endblock %}	
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+	</div>
+
+	<script src="js/bootstrap.bundle.min.js"></script>
+    
+</body>
+</html>
